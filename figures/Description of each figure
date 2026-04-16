@@ -1,0 +1,4 @@
+Mapa_distribucion_sismos:
+
+Tamaño_visual_impacto = mag^4.5, if you want know the earthquake's magnitude.
+
