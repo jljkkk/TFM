@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<style>body{background-color:white;}</style>
+
+
+</head>
+<body>
+
+    <style>
+      table { 
+        border-collapse: collapse !important; 
+        border: 2px solid #4472C4 !important;
+        font-size: 16px !important;
+        margin: 0 auto;
+      }
+      th, td { 
+        border: 1px solid #999 !important; 
+        padding: 8px !important;
+        white-space: nowrap;
+      }
+      thead th {
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
+        vertical-align: bottom !important;
+        height: auto !important;
+         !important;
+        background-color: #4472C4 !important;
+        color: white !important;
+        font-weight: normal !important;
+      }
+      tbody th {
+        background-color: #f0f0f0 !important;
+        font-weight: bold !important;
+        border-right: 2px solid #999 !important;
+      }
+      tbody tr:last-child {
+        border-top: 2px solid #4472C4 !important;
+      }
+      
+      @media print {
+        * { -webkit-print-color-adjust: exact !important; 
+            print-color-adjust: exact !important; 
+            color-adjust: exact !important; }
+      }
+    </style><table class="table" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;color: white !important;background-color: rgba(68, 114, 196, 255) !important;">   </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> target_cla_enc_30d </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> lat </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> days_since_last_eq </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> roll30_energia </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> roll30_mag_max </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> lon </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> adj_roll30_energia </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> eq_count </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> roll30_eq_count </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> adj_roll7_mag_max </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> lag1_eq_count </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> adj_roll30_eq_count </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> main_depth </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> locationSource_ci </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> magNst </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> main_lat </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> roll7_mag_max </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> roll7_energia </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> adj_roll7_eq_count </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> adj_roll30_mag_max </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> energia_acumulada_diaria </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> roll7_eq_count </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> net_us </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> adj_max_mag_x </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> locationSource_us </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> magError </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> depthError </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> rms </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> lat_bin </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> magSource_ci </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> is_converted_mag </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> main_mag </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> main_lon </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> horizontalError </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> nst </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> gap </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> dmin </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> lon_bin </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> lag1_mag_max </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> energia_lag1 </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> adj_max_mag_y </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> locationSource_nn </th>
+   <th style="text-align:center;color: white !important;background-color: rgba(68, 114, 196, 255) !important;"> magSource_nn </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;font-weight: bold;background-color: rgba(240, 240, 240, 255) !important;border-right:1px solid;"> STEPAIC </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-weight: bold;background-color: rgba(240, 240, 240, 255) !important;border-right:1px solid;"> STEPBIC </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-weight: bold;background-color: rgba(240, 240, 240, 255) !important;border-right:1px solid;"> STEPk15 </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-weight: bold;background-color: rgba(240, 240, 240, 255) !important;border-right:1px solid;"> STEPrepAIC1 </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-weight: bold;background-color: rgba(240, 240, 240, 255) !important;border-right:1px solid;"> STEPrepBIC1 </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-weight: bold;background-color: rgba(240, 240, 240, 255) !important;border-right:1px solid;"> STEPrepBIC2 </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-weight: bold;background-color: rgba(240, 240, 240, 255) !important;border-right:1px solid;"> RFE </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-weight: bold;background-color: rgba(240, 240, 240, 255) !important;border-right:1px solid;"> MMPC-0.05 </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-weight: bold;background-color: rgba(240, 240, 240, 255) !important;border-right:1px solid;"> MMPC-0.01 </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-weight: bold;background-color: rgba(240, 240, 240, 255) !important;border-right:1px solid;"> MMPC-0.001 </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-weight: bold;background-color: rgba(240, 240, 240, 255) !important;border-right:1px solid;"> Boruta </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-weight: bold;background-color: rgba(240, 240, 240, 255) !important;border-right:1px solid;"> MI </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-weight: bold;background-color: rgba(240, 240, 240, 255) !important;border-right:1px solid;"> Lasso </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-weight: bold;background-color: rgba(240, 240, 240, 255) !important;border-right:1px solid;"> RF </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-weight: bold;background-color: rgba(240, 240, 240, 255) !important;border-right:1px solid;"> XGB </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(180, 215, 232, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+   <td style="text-align:center;"> <span style="     color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: white !important;text-align: c;">0</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-weight: bold;background-color: rgba(240, 240, 240, 255) !important;border-right:1px solid;"> TOTAL </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">15</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">14</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">13</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">11</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">11</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">10</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">9</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">9</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">8</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">7</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">5</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">5</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">4</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">4</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">4</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">4</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">4</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">4</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">4</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">4</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">3</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">3</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">3</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">3</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">2</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">2</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">2</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">2</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">2</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">2</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">1</span> </td>
+   <td style="text-align:center;"> <span style=" font-weight: bold;    color: black !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: rgba(240, 240, 240, 255) !important;text-align: c;">1</span> </td>
+  </tr>
+</tbody>
+</table>
+</body>
+</html>
